@@ -35,9 +35,20 @@ public class CardService {
 		return cardRepository.findByName(name)
 				.map(existingCard -> {
 					var cardToUpdate = new Card(existingCard.name(),
-										card.price(),
-										card.textBoxText());
+										card.cardType(),
+										card.attribute(),
+										card.level(),
+										card.rank(),
+										card.pendScale(),
+										card.linkArrows(),
+										card.monsterType(),
+										card.textBoxText(),
+										card.atk(),
+										card.def(),
+										card.link(),
+										card.price());
 					return cardRepository.save(cardToUpdate);
 					
 				}).orElseGet(() -> addCardToCatalog(card));
 	}
+}
