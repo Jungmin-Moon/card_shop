@@ -51,4 +51,24 @@ public class CardService {
 					
 				}).orElseGet(() -> addCardToCatalog(card));
 	}
+	
+	
+	/*
+	 * Test card to use in PostMan
+	 * {
+    "name": "Pot of Greed",
+    "cardType": "Spell Card",
+    "attribute": "N/A",
+    "level": 0,
+    "rank": 0,
+    "pendScale": 0,
+    "linkArrows": 0,
+    "monsterType": "N/A",
+    "textBoxText": "Draw 2 cards",
+    "atk": 0, 
+    "def": 0,
+    "link": 0,
+    "price": 5.45
+	}	
+	 */
 }
