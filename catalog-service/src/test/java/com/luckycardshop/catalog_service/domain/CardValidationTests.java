@@ -22,6 +22,9 @@ public class CardValidationTests {
 		validator = factory.getValidator();
 	}
 	
+	//Card card = new Card("Pot of Greed", "Spell Card", "N/A", 0, 0, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45);
+	//name, cardType, attribute, level, rank, pendScale, linkArrows, monsterType, textBoxText, atk, def, link, price
+	
 	//identifies test case
 	@Test
 	void whenAllFieldsCorrectThenValidationSucceeds() {
@@ -56,6 +59,18 @@ public class CardValidationTests {
 		Set<ConstraintViolation<Card>> violations = validator.validate(card);
 		
 		assertThat(violations).hasSize(1);
-		assertThat(violations.iterator().next().getMessage()).isEqualTo("must be between 0 and 12");
+		assertThat(violations.iterator().next().getMessage()).isEqualTo("Level must be between 0 and 12");
 	}
+	
+	@Test
+	void whenRankisDefinedButIncorrectThenValidationFails() {
+		Card card = new Card("Pot of Greed", "Spell Card", "N/A", 0, 16, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45);
+		
+		Set<ConstraintViolation<Card>> violations = validator.validate(card);
+		
+		assertThat(violations).hasSize(1);
+		assertThat(violations.iterator().next().getMessage()).isEqualTo("Rank must be between 0 and 12");
+	}
+	
+	
 }
