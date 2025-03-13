@@ -48,4 +48,14 @@ public class CardValidationTests {
 		//is asserting that the message is equal to the message that is defined by the @NotBlank message in Card
 		assertThat(violations.iterator().next().getMessage()).isEqualTo("Name should not be empty and be valid.");
 	}
+	
+	@Test
+	void whenLevelIsDefinedButIncorrectThenValidationFails() {
+		Card card = new Card("Pot of Greed", "Spell Card", "N/A", -7, 0, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45);
+		
+		Set<ConstraintViolation<Card>> violations = validator.validate(card);
+		
+		assertThat(violations).hasSize(1);
+		assertThat(violations.iterator().next().getMessage()).isEqualTo("must be between 0 and 12");
+	}
 }
