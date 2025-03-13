@@ -14,7 +14,7 @@ public record Card(
 	 */
 		
 	@NotBlank(message = "Name must be defined")
-	@Pattern(regexp = "^[a-zA-Z0-9 !@#$&()\\-`.+,/\"]*$")
+	@Pattern(regexp = "^[a-zA-Z0-9 !@#$&()\\-`.+,/\"]*$", message = "Name should not be empty and be valid.")
 	String name,
 	
 	@NotBlank(message = "Card type must be defined")
