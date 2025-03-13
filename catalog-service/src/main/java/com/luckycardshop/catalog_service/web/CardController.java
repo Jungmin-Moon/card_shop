@@ -19,6 +19,13 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("cards")
 public class CardController {
+	
+	/*
+	 * Learned about @ResponseStatus(HttpStatus.)
+	 * to have the response status returned for a method instead of placing it in the method as part of the response body return
+	 * 
+	 * @Valid annotation for a parameter to make sure it follows the Java Validation API
+	 */
 	private final CardService cardService;
 	
 	public CardController(CardService cardService) {

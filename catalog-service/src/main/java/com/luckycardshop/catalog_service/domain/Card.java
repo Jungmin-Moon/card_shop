@@ -6,6 +6,10 @@ import jakarta.validation.constraints.Positive;
 
 public record Card(
 	
+	/*
+	 * Learned about @NotBlank annotation and @Pattern for regexp on fields 
+	 */
+		
 	@NotBlank(message = "Name must be defined")
 	@Pattern(regexp = "[a-zA-Z &+-.*]")
 	String name,
