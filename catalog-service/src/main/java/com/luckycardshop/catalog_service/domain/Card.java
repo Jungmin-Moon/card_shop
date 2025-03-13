@@ -1,6 +1,9 @@
 package com.luckycardshop.catalog_service.domain;
 
+import org.hibernate.validator.constraints.Range;
+
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
 
@@ -11,54 +14,54 @@ public record Card(
 	 */
 		
 	@NotBlank(message = "Name must be defined")
-	@Pattern(regexp = "[a-zA-Z &+-.*]")
+	@Pattern(regexp = "^[a-zA-Z0-9 !@#$&()\\-`.+,/\"]*$")
 	String name,
 	
 	@NotBlank(message = "Card type must be defined")
-	@Pattern(regexp = "[a-zA-Z ]")
+	@Pattern(regexp = "^[a-zA-Z0-9 !@#$&()\\\\-`.+,/\\\"]*$")
 	String cardType,
 	
 	@NotBlank(message = "Attribute must be defined")
-	@Pattern(regexp = "[a-zA-Z]")
+	@Pattern(regexp = "^[a-zA-Z0-9!@#$&()\\\\-`.+,/\\\"]*$")
 	String attribute,
 	
-	@NotBlank(message = "Level must be defined")
-	@Pattern(regexp = "([0-9]|1[0-2])", message = "Level must be between 0 and 12")
+	@NotNull(message = "Level must be defined")
+	@Range(min = 0, max = 12)
 	int level,
 	
-	@NotBlank(message = "Rank must be defined")
-	@Pattern(regexp = "([0-9]|1[0-2])", message = "Rank must be between 0 and 12")
+	@NotNull(message = "Rank must be defined")
+	@Range(min = 0, max = 12)
 	int rank,
 	
-	@NotBlank(message = "Pendulum Scale must be defined")
-	@Pattern(regexp = "([0-9]|1[0-2])", message = "Pendulum Scale must be between 0 and 12")
+	@NotNull(message = "Pendulum Scale must be defined")
+	@Range(min = 0, max = 12)
 	int pendScale,
 	
-	@NotBlank(message = "How many link arrows must be defined")
-	@Pattern(regexp = "([1-8])", message = "Link Arrows must be between 1 and 8")
+	@NotNull(message = "How many link arrows must be defined")
+	@Range(min = 0, max = 8)
 	int linkArrows,
 	
 	@NotBlank(message = "Monster type must be defined")
-	@Pattern(regexp = "[a-zA-Z -]")
+	@Pattern(regexp = "^[a-zA-Z0-9 !@#$&()\\\\-`.+,/\\\"]*$")
 	String monsterType,
 	
 	@NotBlank(message = "The text in the box must be defined")
-	@Pattern(regexp = "[a-zA-Z &+-.*]")
+	@Pattern(regexp = "^[a-zA-Z0-9 !@#$&()\\\\-`.+,/\\\"]*$")
 	String textBoxText,
 	
-	@NotBlank(message = "Attack must be defined")
-	@Pattern(regexp = "([0-9]|[1-9][0-9]{1,3}|10000)", message = "Atk must be between 0 and 10,000")
+	@NotNull(message = "Attack must be defined")
+	@Range(min = 0, max = 10000)
 	int atk,
 	
-	@NotBlank(message = "Defense must be defined")
-	@Pattern(regexp = "([0-9]|[1-9][0-9]{1,3}|10000)", message = "Def must be between 0 and 10,000")
+	@NotNull(message = "Defense must be defined")
+	@Range(min = 0, max = 10000)
 	int def,
 	
-	@NotBlank(message = "Link must be defined")
-	@Pattern(regexp = "([1-9]|[1-9][0-9])", message = "Link rating must be between 1 and 99")
+	@NotNull(message = "Link must be defined")
+	@Range(min = 0, max = 99)
 	int link,
 	
-	@NotBlank(message = "Price must be defined")
+	@NotNull(message = "Price must be defined")
 	@Positive(message = "The price must be greater than zero.")
 	Double price
 ) {}
