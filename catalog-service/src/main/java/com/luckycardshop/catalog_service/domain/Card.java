@@ -25,6 +25,7 @@ public record Card(
 	@Pattern(regexp = "^[a-zA-Z0-9!@#$&()\\\\-`.+,/\\\"]*$")
 	String attribute,
 	
+	//@Range with min and max is much easier to use for Integers
 	@NotNull(message = "Level must be defined")
 	@Range(min = 0, max = 12)
 	int level,
