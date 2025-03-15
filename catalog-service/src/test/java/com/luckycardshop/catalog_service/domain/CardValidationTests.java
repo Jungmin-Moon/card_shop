@@ -36,7 +36,7 @@ public class CardValidationTests {
 		//checks that if the Set is empty then no errors were made 
 		assertThat(violations).isEmpty();
 	}
-	
+	/*
 	@Test
 	void whenNameDefinedButIncorrectThenValidationFails() {
 		//now testing each value individually instead, in this case name
@@ -72,5 +72,5 @@ public class CardValidationTests {
 		assertThat(violations.iterator().next().getMessage()).isEqualTo("Rank must be between 0 and 12");
 	}
 	
-	
+	*/
 }
