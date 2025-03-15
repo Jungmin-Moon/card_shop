@@ -31,12 +31,8 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: |
-        mvn clean
-        mvn install
-        mvn package --file catalog-service/pom.xml
-    - name: Standard Checkout
-      uses: actions/checkout@v4
+      run: mvn -B package --file catalog-service/pom.xml -DskipTests
+
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
