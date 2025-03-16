@@ -16,6 +16,7 @@ public class HomeController {
 	
 	@GetMapping("/")
 	public String getGreeting() {
+		//now instead of hard coding it in the controller can edit the application.yml and edit the greeting whenever and future properties as well.
 		return cardShopProperties.getGreeting();
 	}
 }
