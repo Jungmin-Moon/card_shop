@@ -7,3 +7,6 @@ server:
     threads:
       max: 50
       min-space: 5
+      
+cardshop:
+  greeting: Welcome to the local card shop catalog.
