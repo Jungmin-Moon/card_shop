@@ -27,6 +27,11 @@ spring:
         initial-interval: 1000
         max-interval: 2000
         multiplier: 1.1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
 
 #We include timeouts so that in the event of no config serer we just fail quickly
 #fail-fast is set to true to make a failure to connect to the config server fatal
@@ -34,3 +39,8 @@ spring:
 #initial-interval is how long to wait on first go
 #max-interval being the max amount of time we want to wait
 #multiplier specifies how much to increase interval time with each subsequent retry
+#For the moment understanding is that the management.endpoints.web.exposure.include: refresh just stells
+#Spring Boot to expose the /actuator/refresh endpoint
+
+
+
