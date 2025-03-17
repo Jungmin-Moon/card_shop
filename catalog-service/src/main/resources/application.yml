@@ -10,3 +10,11 @@ server:
       
 cardshop:
   greeting: Welcome to the local card shop catalog.
+spring:
+  application:
+    name: catalog-service
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: http://localhost:8888
