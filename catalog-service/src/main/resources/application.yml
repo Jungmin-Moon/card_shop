@@ -7,6 +7,7 @@ server:
     threads:
       max: 50
       min-space: 5
+
       
 cardshop:
   greeting: Welcome to the local card shop catalog.
@@ -18,3 +19,18 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
+      request-connect-timeout: 5000
+      request-read-timeout: 5000
+      fail-fast: false	
+      retry:
+        max-attempts: 6
+        initial-interval: 1000
+        max-interval: 2000
+        multiplier: 1.1
+
+#We include timeouts so that in the event of no config serer we just fail quickly
+#fail-fast is set to true to make a failure to connect to the config server fatal
+#max-attempts is just how many times we should try max to reconnect
+#initial-interval is how long to wait on first go
+#max-interval being the max amount of time we want to wait
+#multiplier specifies how much to increase interval time with each subsequent retry
