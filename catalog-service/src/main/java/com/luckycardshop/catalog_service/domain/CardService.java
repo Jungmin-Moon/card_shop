@@ -34,7 +34,8 @@ public class CardService {
 	public Card editCardDetails(String name, Card card) {
 		return cardRepository.findByName(name)
 				.map(existingCard -> {
-					var cardToUpdate = new Card(existingCard.name(),
+					var cardToUpdate = new Card(existingCard.id(),
+										existingCard.name(),
 										card.cardType(),
 										card.attribute(),
 										card.level(),
@@ -46,7 +47,8 @@ public class CardService {
 										card.atk(),
 										card.def(),
 										card.link(),
-										card.price());
+										card.price(),
+										existingCard.version());
 					return cardRepository.save(cardToUpdate);
 					
 				}).orElseGet(() -> addCardToCatalog(card));

@@ -18,14 +18,16 @@ public class CardDataLoader {
 		this.cardRepository = cardRepository;
 	}
 	
+	//had to be updated since Card record now has a Long id and int version with a constructor
+	//framework will handle those values as long as everything else is supplied
 	@EventListener(ApplicationReadyEvent.class)
 	public void loadCardTestData() {
-		var card1 = new Card("Pot of Greed", "Spell Card", "N/A", 0, 0, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45);
+		var card1 = Card.of("Pot of Greed", "Spell Card", "N/A", 0, 0, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45);
 		
 		var impermText = "Target 1 face-up monster your opponent controls; negate its effects (until the end of this turn), then, "
 				+ "if this card was set before activation and is on the field at resolution, for the rest of this turn all other Spell/Trap effects in this column are negated. If you control no cards, you can activate this "
 				+ "card from your hand.";
-		var card2 = new Card("Infinite Impermanence", "Trap Card", "N/A", 0, 0, 0, 0, "N/A", impermText, 0, 0, 0, 15.56);
+		var card2 = Card.of("Infinite Impermanence", "Trap Card", "N/A", 0, 0, 0, 0, "N/A", impermText, 0, 0, 0, 15.56);
 		cardRepository.save(card1);
 		cardRepository.save(card2);
 	}

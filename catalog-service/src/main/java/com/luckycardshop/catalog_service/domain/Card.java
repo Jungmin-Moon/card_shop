@@ -1,6 +1,8 @@
 package com.luckycardshop.catalog_service.domain;
 
 import org.hibernate.validator.constraints.Range;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Version;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -12,6 +14,9 @@ public record Card(
 	/*
 	 * Learned about @NotBlank annotation and @Pattern for regexp on fields 
 	 */
+		
+	@Id
+	Long id,
 		
 	@NotBlank(message = "Name must be defined")
 	@Pattern(regexp = "^[a-zA-Z0-9 !@#&-.+,/\"]*$", message = "Name should not be empty and be valid.")
@@ -64,5 +69,13 @@ public record Card(
 	
 	@NotNull(message = "Price must be defined")
 	@Positive(message = "The price must be greater than zero.")
-	Double price
-) {}
+	Double price,
+	
+	@Version
+	int version
+) {
+	public static Card of(String name, String cardType, String attribute, int level, int rank, int pendScale, int linkArrows, 
+			String monsterType, String textBoxText, int atk, int def, int link, double price) {
+		return new Card(null, name, cardType, attribute, level, rank, pendScale, linkArrows, monsterType, textBoxText, atk, def, link, price, 0);
+	}
+}
