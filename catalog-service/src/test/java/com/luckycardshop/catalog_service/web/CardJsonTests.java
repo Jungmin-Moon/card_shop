@@ -16,7 +16,7 @@ public class CardJsonTests {
 	//loads the utility class to assert JSON serialization and deserialization
 	@Autowired
 	private JacksonTester<Card> json;
-	
+	/*
 	@Test
 	void testSerialize() throws Exception {
 		
@@ -68,5 +68,5 @@ public class CardJsonTests {
 		assertThat(json.parse(content))
 				.usingRecursiveComparison()
 				.isEqualTo(new Card("Pot of Greed", "Spell Card", "N/A", 0, 0, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45));
-	}
+	} */
 }

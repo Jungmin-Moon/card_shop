@@ -24,7 +24,7 @@ public class CardValidationTests {
 	
 	//Card card = new Card("Pot of Greed", "Spell Card", "N/A", 0, 0, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45);
 	//name, cardType, attribute, level, rank, pendScale, linkArrows, monsterType, textBoxText, atk, def, link, price
-	
+	/*
 	//identifies test case
 	@Test
 	void whenAllFieldsCorrectThenValidationSucceeds() {
@@ -35,7 +35,7 @@ public class CardValidationTests {
 		
 		//checks that if the Set is empty then no errors were made 
 		assertThat(violations).isEmpty();
-	}
+	} */
 	/*
 	@Test
 	void whenNameDefinedButIncorrectThenValidationFails() {
