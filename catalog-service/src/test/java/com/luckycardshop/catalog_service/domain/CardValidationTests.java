@@ -24,18 +24,18 @@ public class CardValidationTests {
 	
 	//Card card = new Card("Pot of Greed", "Spell Card", "N/A", 0, 0, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45);
 	//name, cardType, attribute, level, rank, pendScale, linkArrows, monsterType, textBoxText, atk, def, link, price
-	/*
+	
 	//identifies test case
 	@Test
 	void whenAllFieldsCorrectThenValidationSucceeds() {
-		Card card = new Card("Pot of Greed", "Spell Card", "N/A", 0, 0, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45); //testing a new Card object
+		Card card = Card.of("Pot of Greed", "Spell Card", "N/A", 0, 0, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45); //testing a new Card object
 		
 		//creates a set that will hold any and all validation violations the above test case might produce
 		Set<ConstraintViolation<Card>> violations = validator.validate(card);
 		
 		//checks that if the Set is empty then no errors were made 
 		assertThat(violations).isEmpty();
-	} */
+	} 
 	/*
 	@Test
 	void whenNameDefinedButIncorrectThenValidationFails() {
@@ -70,7 +70,7 @@ public class CardValidationTests {
 		
 		assertThat(violations).hasSize(1);
 		assertThat(violations.iterator().next().getMessage()).isEqualTo("Rank must be between 0 and 12");
-	}
+	} */
 	
-	*/
+	
 }

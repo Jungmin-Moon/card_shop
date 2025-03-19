@@ -24,7 +24,7 @@ public class CardControllerMvcTests {
 	//creates a mock CardService to be used in tests
 	@MockitoBean
 	private CardService cardService;
-	/*
+	
 	@Test
 	void whenGetCardNotExistingThenShouldReturn404() throws Exception {
 		String name = "Pot of Greed";
@@ -35,5 +35,5 @@ public class CardControllerMvcTests {
 		//used to perform a GET to make sure that indeed there is no such card in the catalog
 		mockMvc.perform(get("/cards/" + name))
 				.andExpect(status().isNotFound());
-	} */
+	} 
 }

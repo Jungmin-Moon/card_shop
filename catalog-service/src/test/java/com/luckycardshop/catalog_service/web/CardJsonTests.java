@@ -16,12 +16,12 @@ public class CardJsonTests {
 	//loads the utility class to assert JSON serialization and deserialization
 	@Autowired
 	private JacksonTester<Card> json;
-	/*
+	
 	@Test
 	void testSerialize() throws Exception {
 		
 		//establishing what object we want to test the serialization of
-		var card = new Card("Pot of Greed", "Spell Card", "N/A", 0, 0, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45);
+		var card = Card.of("Pot of Greed", "Spell Card", "N/A", 0, 0, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45);
 		
 		//this actually parses it using the utility class on the Object in this case card
 		var jsonContent = json.write(card);
@@ -67,6 +67,6 @@ public class CardJsonTests {
 		//checking that when the json above is parsed through the values are equal to the ones passed in the new Card object
 		assertThat(json.parse(content))
 				.usingRecursiveComparison()
-				.isEqualTo(new Card("Pot of Greed", "Spell Card", "N/A", 0, 0, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45));
-	} */
+				.isEqualTo(Card.of("Pot of Greed", "Spell Card", "N/A", 0, 0, 0, 0, "N/A", "Draw 2 cards", 0, 0, 0, 5.45));
+	} 
 }
