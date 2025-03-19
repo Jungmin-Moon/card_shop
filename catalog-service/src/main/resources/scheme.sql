@@ -13,5 +13,7 @@ CREATE TABLE card (
 	atk integer NOT NULL,
 	def integer NOT NULL,
 	price float8 NOT NULL,
+	created_date timestamp NOT NULL,
+	last_modified_date timestamp NOT NULL,
 	version integer NOT NULL
 );

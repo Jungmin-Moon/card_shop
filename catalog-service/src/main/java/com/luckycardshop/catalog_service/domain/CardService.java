@@ -48,6 +48,8 @@ public class CardService {
 										card.def(),
 										card.link(),
 										card.price(),
+										existingCard.createdDate(),
+										existingCard.lastModifiedDate(),
 										existingCard.version());
 					return cardRepository.save(cardToUpdate);
 					
