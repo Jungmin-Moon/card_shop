@@ -37,6 +37,7 @@ spring:
   sql:
     init:
       mode: always
+
 management:
   endpoints:
     web:

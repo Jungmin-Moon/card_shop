@@ -13,6 +13,8 @@ import com.luckycardshop.catalog_service.domain.CardRepository;
 @Component
 @Profile("testdata")
 public class CardDataLoader {
+	//easy way to switch profiles when running from Eclipse IDE is in Boot Dashboard, right click the project, open config and change profile
+	
 	
 	private final CardRepository cardRepository;
 	
