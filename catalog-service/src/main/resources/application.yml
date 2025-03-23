@@ -29,7 +29,7 @@ spring:
         multiplier: 1.1
   datasource:
     username: user
-    password: passwrod
+    password: password
     url: jdbc:postgresql://localhost:5432/luckycardshopdb_catalog
     hikari:
       connection-timeout: 2000
