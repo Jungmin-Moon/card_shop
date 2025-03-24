@@ -131,7 +131,9 @@
 					</execution>
 				</executions>
 				<configuration>
-					<imageName>${project.name}</imageName>
+					<image>
+						<name>ghcr.io/jungmin-moon/catalog-service</name>
+					</image>
 				</configuration>
 			</plugin>
 		</plugins>
