@@ -48,10 +48,10 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
-      - name: Make Maven Wrapped executable
+      - name: Build with Maven
+        run: mvn -B package --file catalog-service
         working-directory: ${{github.workspace}}
-        run: chmod +x ./mvnw
       - name: Build container image
         working-directory: ${{github.workspace}}
-        run: ./mvnw package spring-boot:build-image
+        run: mvn spring-boot:build-image
           
