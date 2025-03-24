@@ -49,8 +49,9 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Make Maven Wrapped executable
+        working-directory: ${{github.workspace}}
         run: chmod +x ./mvnw
       - name: Build container image
-        #working-directory: ${{github.workspace}}
+        working-directory: ${{github.workspace}}
         run: ./mvnw spring-boot:build-image
           
