@@ -53,5 +53,5 @@ jobs:
           cache: maven
       - name: Build container image
         run: |
-          mvn spring-boot:build-image
+          mvn spring-boot:build-image --file catalog-service
           
