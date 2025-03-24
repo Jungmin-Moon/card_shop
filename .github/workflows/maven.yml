@@ -14,7 +14,7 @@ on:
   pull_request:
     branches: [ "main" ]
 env:
-  REGISTRY: ghcr.io
+  REGISTRY: docker.io
   IMAGE_NAME: jungmin-moon/catalog-service
   VERSION: latest
 jobs:
