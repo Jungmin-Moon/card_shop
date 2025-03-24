@@ -53,7 +53,7 @@ jobs:
           cache: maven
       - name: Build container image
         run: |
-          mvn spring-boot:build-image --file catalog-service ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+          mvn spring-boot:build-image --file catalog-service
       - name: OCI image vulnerability scanning
         uses: anchore/scan-action@v6
         id: scan
