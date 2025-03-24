@@ -32,7 +32,7 @@ jobs:
       working-directory: ${{github.workspace}}
   package:
     name: Package and Publish
-    if: ${{ github.ref = 'refs/heads/main' }}
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: [build]
     runs-on: ubuntu-latest
     permissions:
