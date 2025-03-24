@@ -53,5 +53,5 @@ jobs:
         run: chmod +x ./mvnw
       - name: Build container image
         working-directory: ${{github.workspace}}
-        run: ./mvnw spring-boot:build-image
+        run: ./mvnw package spring-boot:build-image
           
