@@ -48,10 +48,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
-        run: mvn -B package --file catalog-service
-        working-directory: ${{github.workspace}}
       - name: Build container image
-        working-directory: ${{github.workspace}}
-        run: mvn spring-boot:build-image
+        run: |
+          chmod +x ./mvnw
+          ./mvnw spring-boot:build-image \
+            --imageName ${{env.REGISTRY}}/${env.IMAGE_NAME}}:${{env.VERSION}}
           
