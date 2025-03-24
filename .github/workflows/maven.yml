@@ -50,5 +50,5 @@ jobs:
           cache: maven
       - name: Build container image
         working-directory: ${{github.workspace}}
-        run: mvn spring-boot:build-image
+        run: ./mvnw spring-boot:build-image
           
