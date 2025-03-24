@@ -49,6 +49,6 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build container image
-        run: |
-          mvn spring-boot:build-image
+        working-directory: ${{github.workspace}}
+        run: mvn spring-boot:build-image
           
