@@ -7,7 +7,7 @@ server:
     threads:
       max: 50
       min-space: 5
-
+  shutdown: graceful
       
 cardshop:
   greeting: Welcome to the local card shop catalog.
@@ -34,7 +34,8 @@ spring:
     hikari:
       connection-timeout: 2000
       maximum-pool-size: 5
-
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
 
 management:
   endpoints:
