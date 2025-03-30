@@ -132,7 +132,7 @@
 				</executions>
 				<configuration>
 					<image>
-						<name>jungmin-moon/catalog-service</name>
+						<name>ghcr.io/jungmin-moon/catalog-service</name>
 					</image>
 				</configuration>
 			</plugin>
