@@ -37,7 +37,7 @@ public class CardController {
 		return cardService.viewCardList();
 	}
 	
-	@GetMapping("{name}")
+	@GetMapping("{name:[a-zA-Z0-9 !@#&-.+,\\/\\\"]*}")
 	public Card getByName(@PathVariable String name) {
 		return cardService.viewCardDetails(name);
 	}
